@@ -46,17 +46,14 @@ class Solution
     {
       //Your code here
       vector<int> ans;
-      Node* curr=node;
-      if(node==NULL) return ans;
       queue<Node*> q;
       q.push(node);
-     
       while(!q.empty())
       {
           Node* u=q.front();
           q.pop();
-          if(u->left)q.push(u->left);
-          if(u->right)q.push(u->right);
+          if(u->left) q.push(u->left);
+          if(u->right) q.push(u->right);
           ans.push_back(u->data);
       }
       return ans;
